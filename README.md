@@ -3,6 +3,7 @@
 
 # Project Details:
   Tech Stack used---------> HTML, CSS, Js, BOOTSTRAPS, GOOGLE FONTS
+# The website we have created is responsive.
 # Local Host- http://127.0.0.1:5500/index.html
 ![Screenshot (517)](https://user-images.githubusercontent.com/69721545/220909016-b9e78952-7c3c-427d-b2cb-eab3d9ec561c.png)
 ![Screenshot (518)](https://user-images.githubusercontent.com/69721545/220909034-7a400c62-c460-4643-a2e9-f230e65affe5.png)
