@@ -1,0 +1,63 @@
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: rgb(96, 168, 165);;
+    overflow: auto;
+    padding: 10px 10px 10px 10px;
+  }
+
+@media (max-width: 600px) {
+
+
+body {
+    overflow-x: hidden;
+    font-family: "Montserrat";
+  }
+
+  .mapouter {
+    position: relative;
+    text-align: right;
+    border-radius: 44px;
+  }
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    width: 100%;
+    border-radius: 74px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 10%;
+  }
+  .col {
+    width: 45%;
+    margin: 0 10px 0 10px;
+  }
+  h1 {
+   
+    text-align: center;
+  }
+  #about-us,
+  h1 {
+    font-family: "Montserrat";
+  }
+  nav {
+    position: relative;
+    background: transparent;
+  }
+  p {
+    text-align: justify;
+  }
+  figure > img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    border-radius: 7px;
+  }
+}
