@@ -21,6 +21,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="../js/preloader.js"></script>
     <link rel="stylesheet" href="../css/navbar.css" />
+    <script src="../js/info.js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -49,10 +50,10 @@
     <section>
       <div class="row">
         <div class="col1">
-          <img src="../Images/nike-6.jpg" alt="" srcset="" />
+          <img src="../Images/nike-6.jpg" alt="" srcset="" id="image" />
         </div>
         <div class="col2">
-          <h1>Nike Free RN OC</h1>
+          <h1 id="name_of_shoe"></h1>
           <p>
             The iconic Nike Free returns with more perforations and engineered
             mesh in the upper that strategically target breathability across
@@ -60,22 +61,22 @@
             without compromising comfort, while exposed Flywire cables give you
             a snug fit at higher speeds.
           </p>
-          <h2>RS 12000</h2>
+          <h2 id="Price"></h2>
           <span>
             <h3>Size</h3>
-            <select name="" id="">
+            <select name="" id="size">
               <option value="" selected disabled
                 >Please select an option</option
               >
-              <option value="">UK/IN 6</option>
-              <option value="">UK/IN 7</option>              
-              <option value="">UK/IN 8</option>
-              <option value="">UK/IN 9</option>
+              <option value="UK/IN 6">UK/IN 6</option>
+              <option value="UK/IN 7">UK/IN 7</option>              
+              <option value="UK/IN 8">UK/IN 8</option>
+              <option value="UK/IN 9">UK/IN 9</option>
             </select>
           </span>
           <br />
           <br />
-          <a class="button-cart" href="checkout.html">Add to cart</a> &nbsp;
+          <a class="button-cart" onclick="addToCart()">Add to cart</a> &nbsp;
           &nbsp;
           <a class="wishlist" href="">Add to wishlist</a>
         </div>
@@ -92,5 +93,22 @@
         style="display:block; margin:30px auto; width: 70%"
       ></video>
     </section>
+    <script>
+const urlParams = new URLSearchParams(window.location.search);
+const name = urlParams.get('name');
+// console.log(name)
+const pic = urlParams.get('pic');
+// console.log(pic)
+const price=urlParams.get('price')
+// console.log(price)
+document.getElementById('image').src=`../Images/${pic}`
+let access_price=document.getElementById('Price')
+access_price.innerHTML=` ${price}`
+if(document.getElementById('name_of_shoe')){
+let access_name=document.getElementById('name_of_shoe')
+access_name.innerHTML=`${name}`
+}
+      </script>
+    
   </body>
 </html>

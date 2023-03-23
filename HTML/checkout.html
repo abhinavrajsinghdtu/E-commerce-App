@@ -49,13 +49,15 @@
     <section>
       <h1>Cart</h1>
       <div class="row">
-        <div class="column">
+        <div class="column" id="x">
           <h1>Your Order</h1>
           <h5>Please select the quantity below</h5>
-          <div class="cart-item" id="item">
+          
+          <!-- <div class="cart-item" id="item">
+
             <img src="../Images/img-Nike1.jpg" alt="" />
-            <p>Nike Air Max (Red)</p>
-            <p>RS 13000</p>
+            <p class="shoe_name"></p>
+            <p class="shoe_price"></p>
             <input
               type="number"
               name="quantity"
@@ -68,44 +70,12 @@
             <button id="remove" class="remove">
               <i class="fas fa-trash fa-2x"></i>
             </button>
-          </div>
-          <div class="cart-item" id="item1">
-            <img src="../Images/img-Nike4.jpg" alt="" />
-            <p>Nike Air Max (Pink)</p>
-            <p>RS 12000</p>
-            <input
-              type="number"
-              name="quantity"
-              id="no-of-items"
-              value="1"
-              min="1"
-              max="6"
-              step="1"
-            />
-            <button id="remove2" class="remove">
-              <i class="fas fa-trash fa-2x"></i>
-            </button>
-          </div>
-          <div class="cart-item" id="item2">
-            <img src="../Images/img-Nike3.jpg" alt=""/>
-            <p>Nike Air Max (Blue)</p>
-            <p>RS 14000</p>
-            <input
-              type="number"
-              name="quantity"
-              id="no-of-items"
-              value="1"
-              min="1"
-              max="6"
-              step="1"
-            />
-            <button id="remove3" class="remove">
-              <i class="fas fa-trash fa-2x"></i>
-            </button>
-          </div>
-          <hr />
+          </div> -->
+        
+          
+          <!-- <hr /> -->
         </div>
-        <div class="column2">
+        <div class="column2" >
           <h3>Cart Totals</h3>
           <div class="row1">
             <div class="col">
@@ -140,5 +110,74 @@
         </div>
       </div>
     </section>
+      <script>
+        let list=[]
+
+      let d=document.getElementById('parent_item')
+      console.log(d)
+      let data= JSON.parse(localStorage.getItem('cart') || []);
+       
+for(let p=0;p<data.length;p++){
+let newDiv = document.createElement("div");
+newDiv.class='cart-item'
+
+let img=document.createElement('img')
+img.src="../Images/img-Nike1.jpg"
+let shoename_paragraph=document.createElement('p')
+if(data[p]){
+shoename_paragraph.innerHTML=`${data[p].name_of_shoe}`
+}
+let price_paragraph=document.createElement('p')
+if(data[p]){
+price_paragraph.innerHTML=`${data[p].price}`
+}
+let input=document.createElement('input')
+input.type='number'
+input.name="quantity"
+input.id="no-of-items"
+if(data[p]){
+input.value=`${data[p].qty}`
+}
+input.min='1'
+input.max='6' 
+input.step='1' 
+let button=document.createElement('button')
+button.id='remove'
+button.class='remove'
+let z=document.createTextNode("Delete")
+button.append(z);
+button.addEventListener('click',function(){
+  delete data[p]
+  localStorage.removeItem('cart')
+  console.log( "here is pointer at line 149",data[p])
+  console.log("deleted")
+
+  localStorage.setItem('cart',JSON.stringify(data))
+  location.reload()  
+  
+})
+
+
+
+let i=document.createElement('i')
+i.class='fas fa-trash fa-2x'
+i.style.color='red'
+button.appendChild(i)
+let hr=document.createElement('hr')
+newDiv.appendChild(img)
+newDiv.appendChild(shoename_paragraph)
+newDiv.appendChild(price_paragraph)
+newDiv.appendChild(input)
+newDiv.appendChild(button)
+newDiv.appendChild(hr)
+let obj=document.getElementById('x')
+obj.appendChild(newDiv)
+
+
+}
+
+
+
+      </script>
   </body>
 </html>

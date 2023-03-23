@@ -1,5 +1,5 @@
 $(function() {
-  $("#remove").click(function() {
+  $("#delete").click(function() {
     var confirm = window.confirm("Are you sure you want to delete this item?");
     if (confirm == true) {
       $("#item").hide();
@@ -8,7 +8,7 @@ $(function() {
       alert("Item not deleted");
     }
   });
-  $("#remove2").click(function() {
+  $("#delete2").click(function() {
     var confirm = window.confirm("Are you sure you want to delete this item?");
     if (confirm == true) {
       $("#item1").hide();
@@ -17,7 +17,7 @@ $(function() {
       alert("Item not deleted");
     }
   });
-  $("#remove3").click(function() {
+  $("#delete3").click(function() {
     var confirm = window.confirm("Are you sure you want to delete this item?");
     if (confirm == true) {
       $("#item2").hide();
