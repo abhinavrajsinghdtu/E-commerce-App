@@ -10,7 +10,7 @@ console.log(pric)
 // console.log(document.getElementById('name_of_shoe').textContent)
 let size_of_shoes=document.getElementById('size').value  
 let name_of_shoe=document.getElementById('name_of_shoe').textContent
-console.log("name of shoe",name_of_shoe)
+// console.log("name of shoe",name_of_shoe)
 
 if(!size_of_shoes){
      alert("Please select size of shoes");
